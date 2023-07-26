@@ -1,6 +1,7 @@
 import os
 
 # MY FIRST SOLUTION
+# Avg duration after 10k executions: 0.0005901309967041015 ms
 def getMaxCalorieMark():
     with open('day1.txt') as f:
         elves_array = f.readlines()
@@ -22,6 +23,7 @@ def getMaxCalorieMark():
     return [elves_totals[0], sum(elves_totals[0:3])]
 
 # https://github.com/jonathanpaulson/AdventOfCode/blob/master/2022/1.py
+# Avg duration after 10k executions: 0.0004540848970413208 ms
 def getMaxCalorieJonathanPaulson():
     X = [l.strip() for l in open('day1.txt')] # Smart use of list comprehension
     Q = []
@@ -34,6 +36,7 @@ def getMaxCalorieJonathanPaulson():
     return(Q[-1],Q[-1]+Q[-2]+Q[-3])
 
 # https://github.com/AkaruiYami/AdventOfCode2022/blob/main/D01/main.py
+# Avg duration after 10k executions: 0.0012166382789611815 ms
 def getMaxCalorieAkaruiYami():
     # Find dir address where the current code located and read input.txt from the dir
     dir = os.path.abspath(os.path.dirname(__file__))
@@ -46,12 +49,14 @@ def getMaxCalorieAkaruiYami():
 
 '''
 MY IMPROVED SOLUTION
+# Avg duration after 10k executions: 0.00038572840690612794 ms - BEST
 - Just using list comprehension and removing another split() reduced time by 14%!
 - Remove the last total check in the loop, append it if != 0 outside of loop
     > This means 1 less split(), 1 less conditional, and 2 less var modifications
 - Total improvement: 33%
 '''
 def getMaxCalorieMark_Optimized():
+    
     calories = [l.strip() for l in open('day1.txt')]
     elves_totals = []
     total_cal = 0

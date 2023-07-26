@@ -7,3 +7,5 @@ I'm doing a deep dive of each Advent of Code challenge, taking a bit longer than
 While studying others' work to my own, I'll be documenting my takeaways and optimized code along the way — a small GitHub blog in the form of code comments.
 
 I'll begin each challenge in Python, and then, eventually, I'd like write each in TypeScript and GoLang.
+
+*Also!* Be sure to check each day's performance improments (how fast my first and optimized executed with the help of others' insights).
